@@ -49,7 +49,7 @@ https://github.com/vanpersl/note/blob/master/Spring/spring%E6%B3%A8%E8%A7%A3.md#
 ```
 
 # 3. 根据参数的名称注入
-[html] view plain copy
+
 
 ```xml
     <bean id="employee" class="www.csdn.spring.cust.Employee">  
