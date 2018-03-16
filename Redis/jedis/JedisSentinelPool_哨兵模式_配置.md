@@ -10,9 +10,9 @@ permalink: xxx
 
 **本文主要基于 Spring 3.*.* 版本** 
 
-- [1. 根据构造器参数的类型](https://github.com/vanpersl/note/blob/master/Redis/jedis/JedisSentinelPool_%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F_%E9%85%8D%E7%BD%AE.md#1-spring%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)
-- [2. 根据索引index注入](https://github.com/vanpersl/note/blob/master/Redis/jedis/JedisSentinelPool_%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F_%E9%85%8D%E7%BD%AE.md#2-redis%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF)
-- [3. 根据参数的名称注入](https://github.com/vanpersl/note/blob/master/Redis/jedis/JedisSentinelPool_%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F_%E9%85%8D%E7%BD%AE.md#3-jedis%E5%B7%A5%E5%85%B7%E7%B1%BB)
+- [1. Spring配置文件](https://github.com/vanpersl/note/blob/master/Redis/jedis/JedisSentinelPool_%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F_%E9%85%8D%E7%BD%AE.md#1-spring%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)
+- [2. Redis配置信息](https://github.com/vanpersl/note/blob/master/Redis/jedis/JedisSentinelPool_%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F_%E9%85%8D%E7%BD%AE.md#2-redis%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF)
+- [3. Jedis工具类](https://github.com/vanpersl/note/blob/master/Redis/jedis/JedisSentinelPool_%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F_%E9%85%8D%E7%BD%AE.md#3-jedis%E5%B7%A5%E5%85%B7%E7%B1%BB)
 - [4. LeaseManager]()
 
 
