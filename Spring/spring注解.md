@@ -8,6 +8,14 @@ permalink: xxx
 
 摘要: 原创出处 http://blog.csdn.net/qxs965266509/article/details/8848794 「note」欢迎转载，保留摘要，谢谢！
 
+**本文主要基于 Spring 3.*.* 版本** 
+
+- [1. 根据构造器参数的类型]()
+- [2. 根据索引index注入]()
+- [3. 根据参数的名称注入]()
+- [4. LeaseManager]()
+
+
 ```xml
     <bean id="employee" class="www.csdn.spring.cust.Employee">  
         <constructor-arg value="qiao" />  
