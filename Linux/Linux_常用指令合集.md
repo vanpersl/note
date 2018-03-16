@@ -8,9 +8,10 @@ permalink: Dubbo/good-collection
 
 摘要: 原创出处 http://www.baidu.com/ 「note」欢迎转载，保留摘要，谢谢！
 
-- [1. 常用指令收集](http://www.iocoder.cn/Dubbo/good-collection/)
-- [2. 软件安装收集](http://www.iocoder.cn/Dubbo/good-collection/)
-- [3. 工作实例整理](http://www.iocoder.cn/Dubbo/good-collection/)
+- [1. 常用指令收集](https://github.com/vanpersl/note/blob/master/Linux/Linux_%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E5%90%88%E9%9B%86.md#1-%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E6%94%B6%E9%9B%86)
+- [2. 软件安装收集](https://github.com/vanpersl/note/blob/master/Linux/Linux_%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E5%90%88%E9%9B%86.md#2-%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%94%B6%E9%9B%86)
+- [3. 工作实例整理](https://github.com/vanpersl/note/blob/master/Linux/Linux_%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E5%90%88%E9%9B%86.md#3-%E5%B7%A5%E4%BD%9C%E5%AE%9E%E4%BE%8B%E6%95%B4%E7%90%86)
+
 
 -------
 
