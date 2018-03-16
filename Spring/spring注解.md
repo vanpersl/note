@@ -10,9 +10,10 @@ permalink: xxx
 
 **本文主要基于 Spring 3.*.* 版本** 
 
-- [1. 根据构造器参数的类型]()
-- [2. 根据索引index注入]()
-- [3. 根据参数的名称注入]()
+- [1. 根据构造器参数的类型](https://github.com/vanpersl/note/blob/master/Spring/spring%E6%B3%A8%E8%A7%A3.md#1-%E6%A0%B9%E6%8D%AE%E6%9E%84%E9%80%A0%E5%99%A8%E5%8F%82%E6%95%B0%E7%9A%84%E7%B1%BB%E5%9E%8B)
+- [2. 根据索引index注入](
+https://github.com/vanpersl/note/blob/master/Spring/spring%E6%B3%A8%E8%A7%A3.md#2-%E6%A0%B9%E6%8D%AE%E7%B4%A2%E5%BC%95index%E6%B3%A8%E5%85%A5)
+- [3. 根据参数的名称注入](https://github.com/vanpersl/note/blob/master/Spring/spring%E6%B3%A8%E8%A7%A3.md#3-%E6%A0%B9%E6%8D%AE%E5%8F%82%E6%95%B0%E7%9A%84%E5%90%8D%E7%A7%B0%E6%B3%A8%E5%85%A5)
 - [4. LeaseManager]()
 
 
