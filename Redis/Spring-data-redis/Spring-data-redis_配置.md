@@ -10,13 +10,31 @@ permalink: xxx
 
 **本文主要基于 Spring 3.*.* 版本** 
 
-- [1. Spring配置文件](https://github.com/vanpersl/note/blob/master/Redis/jedis/JedisSentinelPool_%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F_%E9%85%8D%E7%BD%AE.md#1-spring%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)
-- [2. Redis配置信息](https://github.com/vanpersl/note/blob/master/Redis/jedis/JedisSentinelPool_%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F_%E9%85%8D%E7%BD%AE.md#2-redis%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF)
-- [3. RedisServiceImpl工具类](https://github.com/vanpersl/note/blob/master/Redis/jedis/JedisSentinelPool_%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F_%E9%85%8D%E7%BD%AE.md#3-jedis%E5%B7%A5%E5%85%B7%E7%B1%BB)
+- [1. Spring配置文件](https://github.com/vanpersl/note/blob/master/Redis/Spring-data-redis/Spring-data-redis_%E9%85%8D%E7%BD%AE.md#1-spring%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)
+- [2. Redis配置信息](https://github.com/vanpersl/note/blob/master/Redis/Spring-data-redis/Spring-data-redis_%E9%85%8D%E7%BD%AE.md#2-redis%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF)
+- [3. RedisServiceImpl工具类](https://github.com/vanpersl/note/blob/master/Redis/Spring-data-redis/Spring-data-redis_%E9%85%8D%E7%BD%AE.md#3-redisserviceimpl%E5%B7%A5%E5%85%B7%E7%B1%BB)
 - [4. LeaseManager]()
 
 
 
+**依赖的maven包版本** 
+```xml
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-redis</artifactId>
+				<version>1.7.0.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>2.8.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-pool2</artifactId>
+				<version>2.0</version>
+			</dependency>
+```
 
 # 1. Spring配置文件
 ```xml
@@ -200,4 +218,4 @@ public class RedisServiceImpl implements IRedisService {
 
 }
 ```
-实际上需要调整的部分并不多，只需要将JedisPool换成JedisSentinelPool，其他操作部分基本可以不变。
+
