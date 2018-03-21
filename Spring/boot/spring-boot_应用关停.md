@@ -1,5 +1,5 @@
-title: Spring 注解学习
-date: 2018-03-16
+title: Spring boot学习
+date: 2018-03-21
 tags:
 categories: Spring
 permalink: xxx
@@ -8,7 +8,7 @@ permalink: xxx
 
 摘要: vanpersl原创 「note」欢迎转载，保留摘要，谢谢！
 
-**本文主要基于 Spring 3.*.* 版本** 
+**本文主要基于 Spring Boot 2.0.0.RELEASE 版本** 
 
 - [1. 引入spring boot相关的包](https://github.com/vanpersl/note/blob/master/Spring/boot/spring-boot_%E5%BA%94%E7%94%A8%E5%85%B3%E5%81%9C.md#1-%E5%BC%95%E5%85%A5spring-boot%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8C%85)
 - [2. 配置application.yml](
