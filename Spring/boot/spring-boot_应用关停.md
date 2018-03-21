@@ -6,15 +6,19 @@ permalink: xxx
 
 ---
 
-摘要: 原创出处 http://blog.csdn.net/qxs965266509/article/details/8848794 「note」欢迎转载，保留摘要，谢谢！
+摘要: vanpersl原创 「note」欢迎转载，保留摘要，谢谢！
 
 **本文主要基于 Spring 3.*.* 版本** 
 
-- [1. 引入spring boot相关的包](https://github.com/vanpersl/note/blob/master/Spring/spring%E6%B3%A8%E8%A7%A3.md#1-%E6%A0%B9%E6%8D%AE%E6%9E%84%E9%80%A0%E5%99%A8%E5%8F%82%E6%95%B0%E7%9A%84%E7%B1%BB%E5%9E%8B)
+- [1. 引入spring boot相关的包](https://github.com/vanpersl/note/blob/master/Spring/boot/spring-boot_%E5%BA%94%E7%94%A8%E5%85%B3%E5%81%9C.md#1)
 - [2. 配置application.yml](
-https://github.com/vanpersl/note/blob/master/Spring/spring%E6%B3%A8%E8%A7%A3.md#2-%E6%A0%B9%E6%8D%AE%E7%B4%A2%E5%BC%95index%E6%B3%A8%E5%85%A5)
-- [3. 测试应用关停](https://github.com/vanpersl/note/blob/master/Spring/spring%E6%B3%A8%E8%A7%A3.md#3-%E6%A0%B9%E6%8D%AE%E5%8F%82%E6%95%B0%E7%9A%84%E5%90%8D%E7%A7%B0%E6%B3%A8%E5%85%A5)
+https://github.com/vanpersl/note/blob/master/Spring/boot/spring-boot_%E5%BA%94%E7%94%A8%E5%85%B3%E5%81%9C.md#2)
+- [3. 测试应用关停](https://github.com/vanpersl/note/blob/master/Spring/boot/spring-boot_%E5%BA%94%E7%94%A8%E5%85%B3%E5%81%9C.md#3)
 - [4. LeaseManager]()
+
+https://github.com/vanpersl/note/blob/master/Spring/boot/spring-boot_%E5%BA%94%E7%94%A8%E5%85%B3%E5%81%9C.md#1-%E5%BC%95%E5%85%A5spring-boot%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8C%85
+https://github.com/vanpersl/note/blob/master/Spring/boot/spring-boot_%E5%BA%94%E7%94%A8%E5%85%B3%E5%81%9C.md#2-%E9%85%8D%E7%BD%AEapplicationyml
+https://github.com/vanpersl/note/blob/master/Spring/boot/spring-boot_%E5%BA%94%E7%94%A8%E5%85%B3%E5%81%9C.md#3-%E6%B5%8B%E8%AF%95%E5%BA%94%E7%94%A8%E5%85%B3%E5%81%9C
 
 
 
