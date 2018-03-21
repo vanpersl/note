@@ -10,15 +10,13 @@ permalink: xxx
 
 **本文主要基于 Spring 3.*.* 版本** 
 
-- [1. 引入spring boot相关的包](https://github.com/vanpersl/note/blob/master/Spring/boot/spring-boot_%E5%BA%94%E7%94%A8%E5%85%B3%E5%81%9C.md#1)
+- [1. 引入spring boot相关的包](https://github.com/vanpersl/note/blob/master/Spring/boot/spring-boot_%E5%BA%94%E7%94%A8%E5%85%B3%E5%81%9C.md#1-%E5%BC%95%E5%85%A5spring-boot%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8C%85)
 - [2. 配置application.yml](
-https://github.com/vanpersl/note/blob/master/Spring/boot/spring-boot_%E5%BA%94%E7%94%A8%E5%85%B3%E5%81%9C.md#2)
-- [3. 测试应用关停](https://github.com/vanpersl/note/blob/master/Spring/boot/spring-boot_%E5%BA%94%E7%94%A8%E5%85%B3%E5%81%9C.md#3)
+https://github.com/vanpersl/note/blob/master/Spring/boot/spring-boot_%E5%BA%94%E7%94%A8%E5%85%B3%E5%81%9C.md#2-%E9%85%8D%E7%BD%AEapplicationyml)
+- [3. 测试应用关停](https://github.com/vanpersl/note/blob/master/Spring/boot/spring-boot_%E5%BA%94%E7%94%A8%E5%85%B3%E5%81%9C.md#3-%E6%B5%8B%E8%AF%95%E5%BA%94%E7%94%A8%E5%85%B3%E5%81%9C)
 - [4. LeaseManager]()
 
-https://github.com/vanpersl/note/blob/master/Spring/boot/spring-boot_%E5%BA%94%E7%94%A8%E5%85%B3%E5%81%9C.md#1-%E5%BC%95%E5%85%A5spring-boot%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8C%85
-https://github.com/vanpersl/note/blob/master/Spring/boot/spring-boot_%E5%BA%94%E7%94%A8%E5%85%B3%E5%81%9C.md#2-%E9%85%8D%E7%BD%AEapplicationyml
-https://github.com/vanpersl/note/blob/master/Spring/boot/spring-boot_%E5%BA%94%E7%94%A8%E5%85%B3%E5%81%9C.md#3-%E6%B5%8B%E8%AF%95%E5%BA%94%E7%94%A8%E5%85%B3%E5%81%9C
+
 
 
 
