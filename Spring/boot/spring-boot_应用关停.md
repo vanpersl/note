@@ -24,7 +24,7 @@ https://github.com/vanpersl/note/blob/master/Spring/boot/spring-boot_%E5%BA%94%E
 下面的是常用的spring构造函数的注入方式
 # 1. 引入spring boot相关的包
 ```xml
-    <dependency>
+    		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
