@@ -70,4 +70,25 @@ permalink: Dubbo/good-collection
     * [《Dubbo超时控制源码分析》](https://my.oschina.net/qixiaobo025/blog/1186779)
     * [《Dubbo之telnet实现》](https://my.oschina.net/qixiaobo025/blog/1417321)
     * [《Fst反序列化失败》](https://my.oschina.net/qixiaobo025/blog/1519566)
-    * [《Dubbo配置直连》](https://my.oschina.net/qixiaobo025/blog/1527009)
+    * [《Dubbo配置直连》](https://my.oschina.net/qixiaobo025/blog/1527009)/
+    
+```sh
+cp -r /opt/applog/XXServer/serverbak/. /opt/app/jboss-eap-5.2/jboss-as/server/XXServer/
+sh /opt/app/jboss-eap-5.2/jboss-as/server/XXServer/bin/startXXServer.sh
+tail -f /opt/applog/XXServer/server.log
+tail -f /opt/app/jboss-eap-5.2/jboss-as/server/XXServer/bin/startServer.log
+
+
+zip -r XXServer.zip /opt/applog/XXServer/serverbak
+cp -f /opt/app/jboss-eap-5.2/mod_cluster/XXServer.zip /opt/app/jboss-eap-5.2/jboss-as/server/XXServer.zip
+unzip /opt/app/jboss-eap-5.2/mod_cluster/XXServer.zip -d /opt/app/jboss-eap-5.2/jboss-as/server/XXServer/
+
+ls -lt /opt/app/jboss-eap-5.2/jboss-as/server/XXServer/
+find . -mtime -n -ls | sort -r
+find . -mtime -1 -ls | sort -r
+find . -mtime -0.5 -ls | sort -r
+stat /opt/app/jboss-eap-5.2/jboss-as/server/XXServer/bin/startXXServer.sh
+
+
+cat /opt/app/jboss-eap-5.2/jboss-as/server/XXServer/bin/startXXServer.sh
+```
