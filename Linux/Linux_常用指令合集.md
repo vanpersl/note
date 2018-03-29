@@ -84,6 +84,7 @@ cp -f /opt/app/jboss-eap-5.2/mod_cluster/XXServer.zip /opt/app/jboss-eap-5.2/jbo
 unzip /opt/app/jboss-eap-5.2/mod_cluster/XXServer.zip -d /opt/app/jboss-eap-5.2/jboss-as/server/XXServer/
 
 ls -lt /opt/app/jboss-eap-5.2/jboss-as/server/XXServer/
+# 查看文件夹下的文件最近一天是否有被修改
 find . -mtime -n -ls | sort -r
 find . -mtime -1 -ls | sort -r
 find . -mtime -0.5 -ls | sort -r
