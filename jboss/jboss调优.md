@@ -55,8 +55,8 @@ maxSpareThread：指“如果超过了minSpareThread，然后总是保持该数�
 
 下表罗列出了在不同并发情况下jboss参数与并发在线的一般关系。
 
-|并发数	|服务器内存	|jboss参数|	
-		|maxThreads	|acceptCount|
+|并发数	|服务器内存   |s s |jboss参数|	
+|空	|空|maxThreads	|acceptCount|
 |50以下|	2G	|256	|800|
 |50-300|	4G	|600	|1024|
 |300-800|	8G	|1024	|1528|
