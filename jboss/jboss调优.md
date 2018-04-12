@@ -10,10 +10,10 @@ permalink: xxx
 
 **本文主要基于 jboss-eap-5.2 版本** 
 
-- [1. 根据构造器参数的类型](https://github.com/vanpersl/note/blob/master/Spring/spring%E6%B3%A8%E8%A7%A3.md#1-%E6%A0%B9%E6%8D%AE%E6%9E%84%E9%80%A0%E5%99%A8%E5%8F%82%E6%95%B0%E7%9A%84%E7%B1%BB%E5%9E%8B)
-- [2. 根据索引index注入](
+- [1. JBOSS参数调优](https://github.com/vanpersl/note/blob/master/Spring/spring%E6%B3%A8%E8%A7%A3.md#1-%E6%A0%B9%E6%8D%AE%E6%9E%84%E9%80%A0%E5%99%A8%E5%8F%82%E6%95%B0%E7%9A%84%E7%B1%BB%E5%9E%8B)
+- [2. JVM常见配置汇总](
 https://github.com/vanpersl/note/blob/master/Spring/spring%E6%B3%A8%E8%A7%A3.md#2-%E6%A0%B9%E6%8D%AE%E7%B4%A2%E5%BC%95index%E6%B3%A8%E5%85%A5)
-- [3. 根据参数的名称注入](https://github.com/vanpersl/note/blob/master/Spring/spring%E6%B3%A8%E8%A7%A3.md#3-%E6%A0%B9%E6%8D%AE%E5%8F%82%E6%95%B0%E7%9A%84%E5%90%8D%E7%A7%B0%E6%B3%A8%E5%85%A5)
+- [3. JBOSS生产环境下JVM调优](https://github.com/vanpersl/note/blob/master/Spring/spring%E6%B3%A8%E8%A7%A3.md#3-%E6%A0%B9%E6%8D%AE%E5%8F%82%E6%95%B0%E7%9A%84%E5%90%8D%E7%A7%B0%E6%B3%A8%E5%85%A5)
 - [4. LeaseManager]()
 
 
@@ -82,8 +82,8 @@ jboss参数
 
  
 
-# 2. jvm调优讲解1
-## A：JVM启动参数共分为三类：
+## jvm调优讲解1
+### A：JVM启动参数共分为三类：
         其一是标准参数（-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容；
         其二是非标准参数（-X），指的是JVM底层的一些配置参数
 
@@ -91,11 +91,11 @@ jboss参数
 
         其三是非Stable参数（-XX），这类参数在jvm中是不稳定的，不适合日常使用的，后续也是可能会在没有通知的情况下就直接取消了，需要慎重使用。
         
-## B：而JVM 内存又可分为三个主要的域 ：
+### B：而JVM 内存又可分为三个主要的域 ：
         新域、旧域以及永久域（有的也叫做新生代，年老代，和永久代）。JVM生成的所有新对象放在新域中。一旦对象经历了一定数量的垃圾收集循环后，便进入旧域。而在永久域中是用来存储JVM自己的反射对象的，如class和method对象，而且GC(GarbageCollection)不会在主程序运行期对永久域进行清理。
 
 　　其中新域和旧域属于堆，永久域是一个独立域并且不认为是堆的一部分。
-## C：各主要参数的作用如下 ：
+### C：各主要参数的作用如下 ：
 
 ```bash
         -Xms：设置jvm内存的初始大小
@@ -114,7 +114,7 @@ jboss参数
 Eden区主要是用来存放新生的对象，而两个 Survivor区则用来存放每次垃圾回收后存活下来的对象
 
 
-## D：常见的错误 ：
+### D：常见的错误 ：
         java.lang.OutOfMemoryError相信很多开发人员都用到过，
 
 这个主要就是JVM参数没有配好引起的，但是这种错误又分两种：
@@ -126,7 +126,7 @@ java.lang.OutOfMemoryError:Java heap space和java.lang.OutOfMemoryError: PermGen
 下面是个例子,请根据实际情况进行修改,修改run.conf文件中的如下内容：
 
  JAVA_OPTS="-Xms256m-Xmx2048m -XX:NewSize=256m -XX:MaxNewSize=512m -XX:PermSize=128m-XX:MaxPermSize=256m -XX:+UseConcMarkSweepGC -XX:+CMSPermGenSweepingEnabled-XX:+CMSClassUnloadingEnabled -Djboss.platform.mbeanserver"
-JVM调优讲解2
+## JVM调优讲解2
 在Java的Jvm分为主要为两大块：一个是heap和 nheap
 Heap包括三个区域. Eden space 、survivor space、tenured space.
 其中surivor space包括两个区，一个是from区，一个是to区
@@ -152,8 +152,8 @@ Jvm垃圾收集器包括三种：串行，并行，并发
 
  
 
-JVM常见配置汇总
-1. 堆设置
+# 2. JVM常见配置汇总
+## 1. 堆设置
 -Xss128m:JBoss每增加一个线程（thread)就会立即消耗128K,默认值好像是512k.
 -Xms256m:初始堆大小,代表jvm最少用 512m内存
 -Xmx:最大堆大小 一般为服务器的3/4内存量，推荐至少使用4G内存，不应该超过物理内存的90％。
@@ -161,28 +161,29 @@ JVM常见配置汇总
 -XX:NewRatio=n:设置年轻代和年老代的比值。如:为3，表示年轻代与年老代比值为1：3，年轻代占整个年轻代年老代和的1/4
 -XX:SurvivorRatio=n:年轻代中Eden区与两个Survivor区的比值。注意Survivor区有两个。如：3，表示Eden：Survivor=3：2，一个Survivor区占整个年轻代的1/5
 -XX:MaxPermSize=n:设置持久代大小
-2. 收集器设置
+## 2. 收集器设置
 -XX:+UseSerialGC:设置串行收集器
 -XX:+UseParallelGC:设置并行收集器
 -XX:+UseParalledlOldGC:设置并行年老代收集器
 -XX:+UseConcMarkSweepGC:设置并发收集器
-3. 垃圾回收统计信息
+## 3. 垃圾回收统计信息
 -XX:+PrintGC
 -XX:+PrintGCDetails
 -XX:+PrintGCTimeStamps
 -Xloggc:filename
-4. 并行收集器设置
+## 4. 并行收集器设置
 -XX:ParallelGCThreads=n:设置并行收集器收集时使用的CPU数。并行收集线程数。
 -XX:MaxGCPauseMillis=n:设置并行收集最大暂停时间
 -XX:GCTimeRatio=n:设置垃圾回收时间占程序运行时间的百分比。公式为1/(1+n)
-5. 并发收集器设置
+## 5. 并发收集器设置
 -XX:+CMSIncrementalMode:设置为增量模式。适用于单CPU情况。
 -XX:ParallelGCThreads=n:设置并发收集器年轻代收集方式为并行收集时，使用的CPU数。并行收集线程数。
 
  
 
-JBOSS生产环境下JVM调优
-查看CPU数
+# 3. JBOSS生产环境下JVM调优
+
+## 查看CPU数
 
 cat /proc/cpuinfo | grep "processor" | wc -l
 JBOSS参数
@@ -196,17 +197,17 @@ fi
 if [ "x$JAVA_OPTS" = "x" ]; then    
    JAVA_OPTS="-Xss128k -Xms3000m -Xmx3000m -XX:MaxNewSize=256m -XX:MaxPermSize=256m -XX:+UseParallelGC -XX:ParallelGCThreads=16 -XX:+UseParallelOldGC -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000"    
 fi   
-数据库连接
+## 数据库连接
 　　在JBOSS_HOME\Server\default\deploy目录下存在**-xa-ds.xml文件，用于JBOSS同数据库连接等配置，默认情况下**-xa-ds.xml文件中不包含关于数据库连接池等方面的配置信息，可以添加一下内容进行数据库连接池方面的设置：
 
  
 <min-pool-size>100</min-pool-size>    
 <max-pool-size>500</max-pool-size>   
-日志优化
+## 日志优化
 
 优化JBOSS日志：%JBOSS_HOME%/server/default/conf/log4j.xml
 
-修改Append
+## 修改Append
 
 <SPAN><param name="Append" value="true"/>  
 <param name="Threshold" value="WARN"/></SPAN>  
@@ -226,7 +227,7 @@ fi
 ```
  
 
-修改Root
+## 修改Root
 
 关闭控制台日志输出：
 屏蔽：<appender-ref ref="CONSOLE"/>
@@ -238,7 +239,7 @@ fi
 ```
  
 
-JBOSS瘦身
+# JBOSS瘦身
 在JBOSS中提供许多通常不需要的服务和Jar包
 
 　　比如JMX、Mail、AOP、Hibernate等，可以根据具体项目所涉及的技术，删减JBOSS内置应用，从而提高JBOSS中间件启动速度，减少占用系统资源。
@@ -279,7 +280,7 @@ minSparseThreads=25
  
 4.去掉了一些不用的服务。
  
-# 2.Jboss 优化配置
+# Jboss 优化配置
 ## 一． Jboss后台启动：
 添加后台修改命令：
  vi run.sh
@@ -357,10 +358,11 @@ JAVA_OPTS = “-Xms4096m -Xmx8192m -XX:+UseParallelGC -XX:+UseParallelOldGC -Dsu
   <password></password>
   <min-pool-size>100</min-pool-size>
   <max-pool-size>500</max-pool-size> <exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.MySQLExceptionSorter</exception-sorter-class-name>
-```xml
+```
 
 ## 五． Jboss部署目录优化：
   去掉和应用无关的部署，加快jboss运行速度
+    
  ```xml
 bsh-deployer.xml 
 client-deployer-service.xml  
