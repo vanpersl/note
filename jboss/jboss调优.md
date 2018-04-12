@@ -10,21 +10,10 @@ permalink: xxx
 
 **本文主要基于 jboss-eap-5.2 版本** 
 
-- [1. JBOSS参数调优](https://github.com/vanpersl/note/blob/master/Spring/spring%E6%B3%A8%E8%A7%A3.md#1-%E6%A0%B9%E6%8D%AE%E6%9E%84%E9%80%A0%E5%99%A8%E5%8F%82%E6%95%B0%E7%9A%84%E7%B1%BB%E5%9E%8B)
-- [2. JVM常见配置汇总](
-https://github.com/vanpersl/note/blob/master/Spring/spring%E6%B3%A8%E8%A7%A3.md#2-%E6%A0%B9%E6%8D%AE%E7%B4%A2%E5%BC%95index%E6%B3%A8%E5%85%A5)
-- [3. JBOSS生产环境下JVM调优](https://github.com/vanpersl/note/blob/master/Spring/spring%E6%B3%A8%E8%A7%A3.md#3-%E6%A0%B9%E6%8D%AE%E5%8F%82%E6%95%B0%E7%9A%84%E5%90%8D%E7%A7%B0%E6%B3%A8%E5%85%A5)
-- [4. LeaseManager]()
-
-
-```xml
-    <bean id="employee" class="www.csdn.spring.cust.Employee">  
-        <constructor-arg value="qiao" />  
-        <constructor-arg value="20" />  
-        <constructor-arg ref="dept" />  
-        <constructor-arg value="nv" />  
-    </bean>  
-```
+- [1. JBOSS参数调优](https://github.com/vanpersl/note/blob/master/jboss/jboss%E8%B0%83%E4%BC%98.md#1-jboss%E5%8F%82%E6%95%B0%E8%B0%83%E4%BC%98)
+- [2. JVM常见配置汇总](https://github.com/vanpersl/note/blob/master/jboss/jboss%E8%B0%83%E4%BC%98.md#2-jvm%E5%B8%B8%E8%A7%81%E9%85%8D%E7%BD%AE%E6%B1%87%E6%80%BB)
+- [3. JBOSS生产环境下JVM调优](https://github.com/vanpersl/note/blob/master/jboss/jboss%E8%B0%83%E4%BC%98.md#3-jboss%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%8Bjvm%E8%B0%83%E4%BC%98)
+- [4. Jboss 优化配置]()
 
 
 吐血整理了以前Jboss以及JVM在生产环境下的调优参数，各种不同的案例，都是来自网友杜撰。整合后，希望对广大使用jboss作为生产应用服务器的朋友有所帮助。
@@ -66,20 +55,14 @@ maxSpareThread：指“如果超过了minSpareThread，然后总是保持该数�
 
 下表罗列出了在不同并发情况下jboss参数与并发在线的一般关系。
 
-并发数
-
-服务器内存
-
-jboss参数
-
- 
-
- 
-
-
-
- 
-
+|并发数	|服务器内存	|jboss参数|	
+		|maxThreads	|acceptCount|
+|50以下|	2G	|256	|800|
+|50-300|	4G	|600	|1024|
+|300-800|	8G	|1024	|1528|
+|800-1000|	8G	|1024	|2048|
+|1000-1200|	12G	|1526	|2048|
+|1200-1500|	16G	|2048	|2048|
  
 
 ## jvm调优讲解1
@@ -280,7 +263,7 @@ minSparseThreads=25
  
 4.去掉了一些不用的服务。
  
-# Jboss 优化配置
+# 4. Jboss 优化配置
 ## 一． Jboss后台启动：
 添加后台修改命令：
  vi run.sh
